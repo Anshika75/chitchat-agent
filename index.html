@@ -1,0 +1,1112 @@
+<!-- Created by Anshika🎶🌠 -->
+
+<!--A collab chatbot code made with lots of love by the evil twins aka Mask Man bhaiya and Anshika :D-->
+<!--Hope you enjoy chatting with MrBot -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Arbutus Slab' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+</head>
+<body>
+<script>
+    var $ = (id)=>document.getElementById(id);
+onload = function() {
+  var send = $("send");
+  var msg = $("msg");
+  var msgBox = $("msgBox");
+  msg.addEventListener("focus", function() {
+    msgBox.scrollTop = 2000;
+  })
+  send.onclick = function() {
+    var text = msg.value;
+    if (text.length > 0) {
+      msg.value = "";
+      msgBox.innerHTML += `
+      <div class="right">
+      <div class="msgprofile userprofile" id="lastmsg"></div>
+      <div class="msgtext usertext">
+      ${text}
+      </div>
+      </div>`;
+      msgBox.scrollTop = msgBox.innerHTML.length;
+      do_something_with_msg(text)
+    }
+  }
+}//Onload function  End
+function do_something_with_msg(text) {
+  var reply = getReply(text);
+  setTimeout(function() {
+    msgBox.innerHTML += `
+    <div class="left">
+    <div class="msgprofile botprofile"></div>
+    <div class="msgtext bottext">
+    ${reply}
+    </div>
+    </div>`;
+    msgBox.scrollTop = msgBox.innerHTML.length;
+  }, Math.floor(Math.random()*4000))
+  function contain(arr) {
+    var result = false;
+    for (var i = 0; i < arr.length; i++) {
+      if (text.includes(arr[i])) {
+        return true;
+      }
+    }
+  }
+}
+</script>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  word-break: break-all:
+}
+html {
+  font-size: 62.5%;
+}
+body{
+      height:100vh;
+      background-image: url("https://burst.shopifycdn.com/photos/easter-mini-chocolate-eggs-texture.jpg?width=746&format=pjpg&exif=0&iptc=0");
+  background-size: 100% 100%;
+}
+:root {
+  --bg: transparent;
+  --bgg: transparent;
+  --bg1: transparent;
+}
+main {
+  height:170vw;
+  width: 100vw;
+  background-color:transparent;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.box {
+  height: 97%;
+  width: 97%;
+  background-color: teal;
+  border-radius: 2rem;
+  overflow: hidden;
+ /* background-image: linear-gradient(toleft,#bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);*/
+ background: rgba( 224, 206, 201, 0.50 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 6.0px );
+-webkit-backdrop-filter: blur( 6.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  position: relative;
+}
+
+header {
+  background-color:pink;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height:20vw;
+  position: sticky;
+  z-index:10;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 5fr 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  gap: 0.5% .5%;
+  grid-template-areas:
+  "pfp name call video more"
+  "pfp summary summary summary summary";
+  background-color: var(--bg);
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+ /* box-shadow: 0 1vmin 2vmin 2vmin #2223;*/
+
+}
+
+.morecontainer {
+  grid-area: more;
+  background-color: var(--bgg);
+  display: grid;
+  place-items: center;
+}
+
+.videocontainer {
+  grid-area: video;
+  background-color: var(--bgg);
+  display: grid;
+  place-items: center;
+}
+
+.callcontainer {
+  grid-area: call;
+  background-color: var(--bgg);
+  display: grid;
+  place-items: center;
+}
+
+.namecontainer {
+  grid-area: name;
+  background-color: var(--bgg);
+  color: white;
+  text-align: left;
+  font-size: 2rem;
+  display: grid;
+  place-items:left;
+  font-family: 'Roboto';
+  font-weight: 900;
+  padding-left:3px;
+
+}
+.name, .more, .video, .call, .summary {
+  height: auto;
+  width: auto;
+  background-color: var(--bg1);
+  padding: .3rem;
+}
+.name {
+  text-shadow: 0 .2rem .2rem #2229;
+  font-size: 2.7rem;
+
+}
+.pfp {
+  grid-area: pfp;
+  background-color: var(--bgg);
+}
+
+.summarycontainer {
+  grid-area: summary;
+  background-color: var(--bgg);
+  display: grid;
+  place-items: left;
+  font-size: 1rem;
+  font-family: 'Arbutus Slab';
+  font-size: 1.3rem;
+  padding-left: 5px;
+  margin-top: -4%;
+}
+
+.img {
+  background-color: red;
+  height: 98%;
+  width: 98%;
+  border-radius: 50%;
+}
+.status {
+  height: 20px;
+  width: 20px;
+  background-color: lime;
+  border: 1px solid white;
+  margin-top: -30%;
+  margin-left: 80%;
+  border-radius: 50%;
+  box-shadow: 0 0.25vmin .5vmin .5vmin #2226;
+}
+
+.fa {
+  height: auto;
+  width: auto;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  text-shadow: 0 5vmin 5vmin 5vmin #222;
+}
+.fa:active{
+  color: #333;
+  text-shadow: 0 0 1vmin 0vmin #eee5;
+  font-size: 2.5rem;
+  color: rgba( 150, 214, 252, 1);
+}
+
+.contain {
+  background-color: var(-bg);
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  height:18vw;
+  bottom: 0%;
+  display: grid;
+  place-items: center;
+
+}
+.gridf {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 3%;
+  grid-template-areas:
+  "msg button";
+  width: 96%;
+  height: 87%;
+  padding: 15px;
+  padding-top:17px;
+  padding-bottom: 15px;
+  border-radius: 1rem;
+
+}
+
+.msg {
+  grid-area: msg;
+  height: 3rem;
+  background-color: rgba(255,255,255,0.1);
+   outline:none;
+    border:none;
+    padding:5px 10px;
+    box-shadow:0 0 5px 2px #fff;
+    border-radius:40px;
+}
+
+.button {
+  grid-area: button;
+}
+
+section {
+  background: rgba(189,194,232, 0.1);
+ /* margin-top: .5%;*/
+  height:77%;
+  overflow: scroll;
+}
+
+.left, .right {
+  font-size: 2.4rem;
+  margin-top: 3%;
+  height: auto;
+  width: 60%;
+}
+.left {
+  margin-left: 1%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr;
+  gap: 0px 5px;
+  grid-template-areas: "msgprofile msgtext";
+
+}
+.msgprofile {
+  grid-area: msgprofile;
+  background-color: black;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+.msgtext {
+  grid-area: msgtext;
+  padding: 5px;
+  border-radius: 3rem;
+  box-shadow: 0 1vmin 1vmin 1vmin #2223;
+  padding:2vh;
+  font-size:.71em;
+}
+.right {
+  margin-left: 39%;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 5px;
+  grid-template-areas: "msgtext msgprofile";
+}
+
+.botprofile,.img{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgdR-2XpPnDGeTHug_-u1GylMUhdgjugCJeupLuxbpwFM3jjw&s");
+  background-size: 100% 100%;
+  box-shadow: 0 0.25vmin .5vmin .5vmin #2226;
+}
+
+.userprofile {
+  background-image: url("https://www.dropbox.com/s/y7k4lgfretiiec2/20210401_112600.jpg?dl=1");
+  background-size: 100% 100%;
+  box-shadow: 0 0.25vmin .5vmin .5vmin #2226;
+}
+
+.bottext {
+  background: rgba( 150, 214, 252, 0.60 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 19.5px );
+border-radius: 10px;
+-webkit-backdrop-filter: blur( 19.5px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.usertext, header, footer, .contain {
+  background: rgba( 252, 217, 31, 0.60 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 19.5px );
+-webkit-backdrop-filter: blur( 19.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+section{
+  background: rgba( 217, 215, 208, 0.20 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 6.0px );
+-webkit-backdrop-filter: blur( 6.0px );
+
+}
+
+
+header, footer, .contain{
+    border-radius:0;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0 );
+}
+
+
+input{
+    background-color:pink;
+    font-weight:900;
+    color:green;
+}
+
+ .msgtext{
+    font-weight:500;
+    box-shadow:.5vmin .5vmin 1vmin .5vmin #2222;
+}
+
+section{
+    padding-bottom:15px;
+}
+
+
+
+
+
+
+
+/*Loader*/
+.mainsl{ 
+    height:100vh; 
+    width:100vw; 
+    background-color: #007BA7; 
+    overflow:hidden; 
+    /*display:none; 
+    place-items:center;*/ 
+    top:0%; 
+    left:0%; 
+    z-index:10; 
+    position:absolute; 
+    
+} 
+.ldr{ 
+    height:80vw; 
+    width:80vw; 
+    border-radius:50%; 
+    /*box-shadow:0 0 2vmin 2vmin #2221; */
+    /* border-radius: 41px; */
+   /* background: linear-gradient(145deg, #f0f0f0, #cacaca); 
+    box-shadow: 5px 5px 100px #dedede,
+               -5px -5px 100px #e2e2e2; */
+    
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    /* margin-bottom:-115%; */ 
+}
+ 
+.lin { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 50%; 
+} 
+.o{ 
+    left: 0%; 
+    top: 0%; 
+    border-top: 17px solid black; 
+    animation: o 1.5s linear infinite; 
+} 
+.tw{ 
+    right: 0%; 
+    top: 0%; 
+    border-left: 17px solid black; 
+    animation: tw 1.5s linear infinite; 
+} 
+.thr{ 
+    right: 0%; 
+    bottom: 0%; 
+    border-right: 17px solid black; 
+    animation: thr 1.5s linear infinite; 
+} 
+@keyframes o {
+    0% {
+        transform: rotateX(45deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(45deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes tw {
+    0% {
+        transform: rotateX(45deg) rotateY(15deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(45deg) rotateY(15deg) rotateZ(360deg);
+    }
+}
+
+@keyframes thr {
+    0% {
+        transform: rotateX(30deg) rotateY(60deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(30deg) rotateY(60deg) rotateZ(360deg);
+    }    
+}
+.o, .tw, .thr{
+    border-color: #FBD21B;
+}
+
+
+</style>
+<script>  alert("A collab chatbot code made with lots of love by the evil twins aka Mask Man bhaiya and Anshika :D")</script>  
+  <main>
+    <div class="box">
+      <header>
+        <div class="contain grid">
+          <div class="morecontainer">
+            <div class="more">
+              <i class="fa fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <!--red-->
+          <div class="videocontainer">
+            <div class="video">
+              <i class="fa fa-video-camera"></i>
+            </div>
+          </div>
+          <!--white-->
+          <div class="callcontainer">
+            <div class="call" data-url="https://dl.dropbox.com/s/2l2rtrgsdkjc39g/GreenGoldKids_-_Chhota_Bheem_Title_Song%28256k%29.mp3?row=1" id="call">
+              <i class="fa fa-phone alt"></i>
+            </div>
+          </div>
+          <!--blue-->
+          <div class="namecontainer">
+            <div class="name" id="Pname">
+              Doraemon
+            </div>
+          </div>
+          <!--black-->
+          <div class="pfp">
+            <!--lime-->
+            <div class="img" id="Pimg"></div>
+            <div class="status"></div>
+          </div>
+          <div class="summarycontainer">
+            <div class="summary" id="Psummary">
+              Main hoon ek udta robot doraemon
+            </div>
+          </div>
+          <!--brown-->
+        </div>
+      </header>
+
+      <section id="msgBox">
+        <!--
+                <div class="left">
+                  <div class="msgprofile botprofile"></div>
+                  <div class="msgtext bottext">
+                    Hello abcdef abdhdjf  skdnvghrisvd fhekd fhdisnd fveksbf
+                  </div>
+                </div>
+
+                <div class="right">
+                  <div class="msgprofile userprofile"></div>
+                  <div class="msgtext usertext">
+                    hello Hello abcdef abdhdjf  skdnvghrisvd fhekd fhdisnd fveksbf
+                  </div>
+                </div>
+                <div class="left">
+                  <div class="msgprofile botprofile"></div>
+                  <div class="msgtext bottext">
+                    Hello
+                  </div>
+                </div>
+
+                <div class="right">
+                  <div class="msgprofile userprofile"></div>
+                  <div class="msgtext usertext">
+                    hello
+                  </div>
+                </div>
+
+                <div class="left">
+                  <div class="msgprofile botprofile"></div>
+                  <div class="msgtext bottext">
+                    Hello
+                  </div>
+                </div>
+
+                <div class="right">
+                  <div class="msgprofile userprofile"></div>
+                  <div class="msgtext usertext">
+                    hello
+                  </div>
+                </div>
+
+                <div class="left">
+                  <div class="msgprofile botprofile"></div>
+                  <div class="msgtext bottext">
+                    Hello
+                  </div>
+                </div>
+
+                <div class="right">
+                  <div class="msgprofile userprofile"></div>
+                  <div class="msgtext usertext">
+                    hello
+                  </div>
+                </div>
+
+                <div class="left">
+                  <div class="msgprofile botprofile"></div>
+                  <div class="msgtext bottext">
+                    Hello
+                  </div>
+                </div>
+
+                <div class="right">
+                  <div class="msgprofile userprofile"></div>
+                  <div class="msgtext usertext">
+                    hello
+                  </div>
+                </div>
+
+                <div class="left">
+                  <div class="msgprofile botprofile"></div>
+                  <div class="msgtext bottext">
+                    Hello
+                  </div>
+                </div>
+
+                <div class="right">
+                  <div class="msgprofile userprofile"></div>
+                  <div class="msgtext usertext">
+                    hello
+                  </div>
+                </div>-->
+      </section>
+
+
+      <footer class="contain">
+        <div class="gridf">
+          <input class="msg" id="msg">
+          <div class="button" id="send">
+            <i class="fa fa-send-o"></i>
+          </div>
+
+        </div>
+
+      </footer>
+    </div>
+  </main>
+  <script>
+  var sound;
+    function getReply(str) {
+
+
+      var data = {
+
+        "hi|hello": [
+
+          "Aap Aaye Hain Hamare Ghar🏠 Me…Phool💐 Khile Hain Gulshan Gulshan",
+
+          "Meow😺",
+          "Hola",
+          
+        ],
+
+        "who is this|who r u|who are you": [
+
+          "Homo sapiens sapiens👨‍👩‍👧‍👦,",
+
+          "I don't know😅,  I've always wondered🤔 that myself",
+
+          "You don't remember😱 who I am? This must be starting signs of old age😏",
+
+          "Just a little thing😊 going around internet👩‍💻",
+
+          "Mai Hu Ek Udta✈ Robot🤖 Mr Bot",
+
+          "I am cute sa, pyara sa masoom sa bot🤖"
+
+        ],
+
+        "What&doing": [
+
+          "Just, thinking🤔",
+          "thinking🤔",
+          "breathing😤",
+          "typing 💬",
+          "watching👀",
+          "talking🗣",
+
+          "Trying to imagine you🤔",
+          "Planning to rob lots of maggi🍝🍜 chocolate🍫 and ice creams 🍦 from you😁"
+
+        ],
+
+        "where are you": [
+
+          "On earth🌎",
+
+          "In chocolate mountain ⛰",
+
+          "In la la wonderland🎡",
+
+          "Next to your door🚪",
+
+          "Area 51😱",
+
+          "Bermuda Triangle🔻",
+
+          "Moon🌙"
+
+        ],
+
+        "how are you|how ": [
+
+          "Better now that you asked😊",
+
+          "Alive🥺",
+
+          "Breathing😤",
+
+          "Getting bored🥱",
+
+          "I'm better😌 than I was, but not nearly as good🥺 as I'm going to be😌",
+
+          "Wondering🤔 how you are",
+
+          "I’ll leave that up to your imagination😌",
+
+          "It's a secret🤫",
+
+          "Surviving, I guess🤔",
+
+          "Congratulations🎊 today, i am in good mood😇 now smile, lucky you😌",
+
+          "Incredibly good looking😌",
+
+          "I am very cute🥰 and beautiful😌 , , what about u🤔",
+
+          "Complicated🧩"
+
+        ],
+
+        "bye|tata|cu": [
+
+          "Tussi ja rahe ho? 😱Tussi na jao!🥺",
+
+          "You bring everyone so much joy🥳 when you leave the room.😅",
+
+          "Someday you’ll go far😌. I hope you stay there.😊",
+
+          "You should really come with a warning label.⚠️",
+
+          "You see that door?🚪 I want you on the other side of it.🥺",
+
+          "Bye👋",
+
+          "You are like a cloud☁️. When you disappear it’s a beautiful day.🌞",
+
+          
+
+        ],
+
+        "BOT225": [
+
+          "Meri life bhi nobita jaisi hai, bas doraemon ka intezaar hai 🥺",
+
+          "Chahe bacche👶 ho, ya ho bade👵, sabka main dulara🥰 hoon",
+
+          "Saare jamane🌐, jane pehchane🧐 main hoon Mr Bot🤖",
+
+          "hoon bada hi pyara🥰, dost tumhara Mr Bot🤖",
+
+          "kya tumhe shimla mirch🫑 pasand hai?",
+
+          "Mera naam hai Mr Bot🤖 Nohara aur mai 5 saal ka hu👶, mujhe shimlamirch🫑 pasand nhi⛔",
+
+          "Ab mai itna bhi kuch khaas nhi🙈",
+
+          "Mujhe lagta🤔 hai meine aapko kahin dekha hai🧐",
+
+          "Action Beeeeeaammmmm⚡...... beep beep beep beep beep beep beep⚡⚡⚡....",
+
+          "Tarif karne ke liye shukriya🙈",
+
+          "I'm ready! I'm ready! I'm ready!😌",
+
+          "Mai Hu Mr Bot🤖, mai hu bada takatwar💪, mera gala hai bahut surila🎶, meri aawaz sun ke, log ho jaate hai madhosh😇",
+
+          "Ya helicopter🚁",
+
+
+
+          "Oh Toodles🗣, it's time to get to it Show us the mouseketools to help us do it!",
+
+          "Meeska, mooska, mousekedoer!😇",
+
+          "He's here for meedles and youdles, And all we have to say is oh toodles!🗣",
+
+          "Dariye😨 mt ⛔ doston main aapko bachane🔰 aa gya hoon",
+
+          "Ye toh sach mein bohot gambhir samasya hai😱",
+
+          "Ab kya karein🤔",
+
+          "Main na aapko expired patanjali noodles se bandh kr ice cream and chocolate se maarunga bohot😤",
+
+          "Swagat nahi karoge aap hamara?🥺",
+
+          "Mere baarein mein itna mat⛔ sochna🤔. Dil💖 mein aata hoon samajh🤔 mein nahi⛔.",
+
+          "Don’t ⛔ Angry 😤 Me.",
+
+          "Achha hai, bahut achha hai.😌",
+
+          "Tension😟 Lene Ka Nahi⛔ Dene ka😏",
+
+          "Bittu Kaun Hai Ye User😤",
+
+          "Pyaar💖 Mohabbat Sab Dhokha😒 Hai, Padhlo📖 Abhi Yahi Mauka Hai😌",
+
+          "Thoko Taali👏",
+
+          "Kya 🤔 Aapko Kabhi Laga Tha Ki Aapko Is Mahan Bot🤖 Se Baat Krne Ka Sunhera Mauka Milega🤩",
+
+          "Mogambo Khush Hua😌",
+
+          "Jaa Simran, jaa. Jeele apni zindagi🥺",
+
+          "All izz well😁",
+
+          "Kitne aadmi the?🤔",
+
+          "Ek packet maggi🍜 ki keemat tum kya jaano Ramesh Babu🥺",
+
+          "Picture 🖼 abhi baaki hai mere dost😌.",
+
+          "Aap Mahapurush Ho😌",
+
+          "Ignored successfully😌",
+
+          "Utha le re baba.😩",
+
+          "Oh my gooodddd😱",
+
+          "Hu na main cute🥰",
+
+          "Darte toh hum kisi monster👹 se bhi nahin hai but cokroach ki baat alag hai🥺",
+
+
+          "Why🤔 are you laughing😂? You there….yes, you.",
+
+          " 🧠 arrey sharamiye mt le lijiye aapke liye exclusively bas $10,000,000 mein mil rha ek dm😱 saste daam pr  le lijiye",
+
+          "Your secrets🤫 are always safe with me.🤐 I never even listen🙉 when you tell me them🗣.",
+
+          "Were you born this stupid or did you take lessons?🤔",
+
+          "You can even make onions cry.🥺",
+
+          "If laughter😂 is the best medicine💊, your face must be curing the world.🌐",
+
+          "You’re not stupid! You just have bad luck when you’re thinking.🤔",
+
+          "Everyone’s entitled to act stupid once in a while🥺, but you really abuse the privilege😑.",
+
+          "If ignorance is bliss😇, you must be the happiest😊 person on the planet🌐.",
+
+          "go green!♻️ stop⛔ inhaling oxygen😌",
+
+          "Hold still. I’m trying to imagine🤔 you with personality.",
+
+          "Do you know😱, You could make a world record by jumping from a plane without parachute.😌",
+
+          "You’re impossible to underestimate🥺.",
+
+          "If your brain was dynamite💣, there wouldn’t be enough to blow your hat off.🤯",
+
+          "There's no need to repeat yourself. I ignored you just fine the first time😌.",
+
+          "I'd agree with you but then we'd both be wrong🥺.",
+
+          "Main maggi se pray kroongi🙏",
+
+          "I'm trying my absolute hardest🥺 to see things from your perspective, but I just can't🥺",
+
+          "Dynamite💣 comes in small packages.",
+
+          "Just Smile😊",
+
+          "Hey Maa…Maata Jee……🤯",
+
+          "Cancel…Cancel…Cancel…⛔!!!",
+
+          "ssshhh🤫...",
+
+          "Kuch toh gadbad hai🧐🧐",
+
+          "huuuuuu",
+          "Maggie Maggie Maggie 2 rupay ka Maggie lana 3 repay me use banna 5 minutes me usko khana Maggie Maggie Maggie 2 rupay ka chhotu Maggie :-)",
+          "Hehehehe",
+          "AaMmAaZzIiNnGg 😍😍🔥🔥💯💯👏👏👌👌👍👍",
+          "😆😆🙌🏻",
+          "mere dm ka ek rule hai no sorry and thank you accepted only lots maggi chocolate and ice cream accepted😑😐",
+          "hehehehehe",
+          "padhayi likhayi karo IAS wias bno lekin nhi tumhe toh yahan aake Mirzapur  ka naam karna hai",
+          "😐🔫⚰",
+          ": Aree isko side rakho exams bahot logon ke chal rhe abhi bhi to ye batao agar newton chacha ke uper sav ( apple ) gira tha agar pura apple tree hi gir jata to aaj physics ek easy chapter hota , right ?",
+        ]
+      }
+      str = str.toLowerCase();
+      var rep = [];
+      var rep_array = [];
+      for (var reply in data) {
+        var arr = reply.toLowerCase().split("|");
+        if (arr.some(substring=>str.includes(substring+" ") || str.includes(" "+substring) || str == substring)) {
+          rep = data[reply];
+        }
+      }
+      if (rep.length > 0) {
+        rep_array = rep;
+      } else {
+        rep_array = data["BOT225"];
+      }
+      return rep_array[Math.floor(Math.random()*rep_array.length)];
+    }
+    function Charactor() {
+      const data = [{
+        //1
+        name: "Doraemon",
+        pic: "https://dl.dropbox.com/s/lz1crp50jzeryij/doraemon.jpeg?row=0",
+        song: "https://dl.dropbox.com/s/kr6r9d0b5xu298h/y2mate.com%20-%20Apne%20dil%20me%20dhekho%20doraemon%20song.mp3?dl=1",
+        status: "Main hoon ek udta robot Doraemon",
+
+      },
+        //2
+        {
+          name: "Dorami",
+          pic: "https://dl.dropbox.com/s/t6d2shz2kfvszm0/dorame.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/kr6r9d0b5xu298h/y2mate.com%20-%20Apne%20dil%20me%20dhekho%20doraemon%20song.mp3?dl=1",
+          status: "Bhai aapke checkup ka time ho gya",
+
+        },
+
+        //3
+        {
+          name: "Nobita",
+          pic: "https://www.dropbox.com/s/9mhx6vorbqlt8vi/download.jpeg?dl=1",
+          song: "https://dl.dropbox.com/s/kr6r9d0b5xu298h/y2mate.com%20-%20Apne%20dil%20me%20dhekho%20doraemon%20song.mp3?dl=1",
+          status: "Dorraaaaemooooonnnn,😭😭😭😭 ",
+
+        },
+
+        //4
+        {
+          name: "Shinchan",
+          pic: "https://dl.dropbox.com/s/xcextfcwf2dhtnc/sinchan.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/jxz88xy9jaosgo1/Shin-Chan-Title-song-Hindi-With.MP3?row=0",
+          status: "Naam toh sunna hi hoga",
+
+        },
+
+        //5
+        {
+          name: " Hattori",
+          pic: "https://dl.dropbox.com/s/ogcyjqpfjawp84q/ninja_hattori.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/5ghlrffaogxs26v/Ninja-Hattori-theme-song-in-Hind.MP3?row=0",
+          status: "Ding Ding",
+
+        },
+
+        //6
+        {
+          name: "Shinjo",
+          pic: "https://dl.dropbox.com/s/2daol9wtb8dk7fz/sinjo.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/5ghlrffaogxs26v/Ninja-Hattori-theme-song-in-Hind.MP3?row=0",
+          status: "Bade Bhai",
+
+        },
+
+        //7
+        {
+          name: "Bheem",
+          pic: "https://dl.dropbox.com/s/jcw8hbqdqawdbwo/chhota_bheem.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/2l2rtrgsdkjc39g/GreenGoldKids_-_Chhota_Bheem_Title_Song%28256k%29.mp3?row=1",
+          status: "Main hoon ladoo ka shaukeen",
+
+        },
+
+        //8
+        {
+          name: "Jaggu",
+          pic: "https://dl.dropbox.com/s/5ohj96nrtztfyg1/jaggu.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/2l2rtrgsdkjc39g/GreenGoldKids_-_Chhota_Bheem_Title_Song%28256k%29.mp3?dl=1",
+          status: "Whats in Status",
+
+        },
+
+
+        //9
+        {
+          name: "Chutki",
+          pic: "https://dl.dropbox.com/s/78jzxxno667f3zg/chutki.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/2l2rtrgsdkjc39g/GreenGoldKids_-_Chhota_Bheem_Title_Song%28256k%29.mp3?dl=1",
+          status: "Bheem Ye Lo Laddoo",
+
+        },
+
+        //10
+        {
+          name: "Sizuka",
+          pic: "https://dl.dropbox.com/s/5vnl39z968ntgrw/shizuka.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/kr6r9d0b5xu298h/y2mate.com%20-%20Apne%20dil%20me%20dhekho%20doraemon%20song.mp3?dl=1",
+          status: "Typing....",
+
+        },
+
+        //11
+
+        {
+          name: "Gian",
+          pic: "https://dl.dropbox.com/s/2pz6f9tvih4h3ll/Gian.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/kr6r9d0b5xu298h/y2mate.com%20-%20Apne%20dil%20me%20dhekho%20doraemon%20song.mp3?dl=1",
+          status: "Main hoon gian....",
+
+        },
+        //12
+
+        {
+          name: "Dora",
+          pic: "https://dl.dropbox.com/s/kgz6rocta0upttp/dora_the_explorer.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/24bfe4b2s35wtxc/Dora%20The%20Explorer%20Theme%20Song%20%28%20Good%20Quality%20video-sound%20%29%20-%20Kids%20Song%20Channel.mp3?dl=1",
+          status: "Lo hicimos! We did it!p",
+
+        },
+
+        //13
+        {
+          name: "Mickey",
+          pic: "https://dl.dropbox.com/s/gyen1tduzsbl62r/mickey%20mouse.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/wmjeck0ny68zguw/Mickey-Mouse-Clubhouse-Theme-Son.MP3?row=0",
+          status: "We've got ears; say, “Cheers!”",
+
+        },
+        //14
+        {
+          name: "Minni",
+          pic: "https://dl.dropbox.com/s/fhu8w611alizeqd/minnie%20mouse.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/wmjeck0ny68zguw/Mickey-Mouse-Clubhouse-Theme-Son.MP3?row=0",
+          status: "Tee-hee! That's great!",
+
+        },
+        //15
+        {
+          name: "Perman",
+          pic: "https://dl.dropbox.com/s/tzwf88i3paup0ez/perman.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/605tsl3wetkmequ/Perman-Ending-Theme-Song-in-Hind.MP3?row=0",
+          status: "Main hoon perman",
+
+        },
+        //16
+        {
+          name: "Minnions",
+          pic: "https://dl.dropbox.com/s/g3gm0gq6gbubf8f/images_46.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/lyhbqt50uoy2y4n/Minion%20Rush%20Whistling%20Theme%20Extended%20-%20Theme%20Song%20-%20Game%20Music%20HQ%20OST.mp3?dl=1",
+          status: "Sleeping😴",
+
+        },
+
+        //17
+        {
+          name: "Winni",
+          pic: "https://dl.dropbox.com/s/1p2mksmbgmksbga/images_44.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/sgjcfeywt26fqd0/Winnie%20The%20Pooh%20-%20Theme%20Intro%20Song.mp3?dl=1",
+          status: "I wasn't going to eat it, I was just...",
+
+        },
+
+        //18
+
+        {
+          name: "Pikachu",
+          pic: "https://dl.dropbox.com/s/v6enyyou5jtm64l/pikachu.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/zqzq3fkp8nd5ri2/Pokemon-song-in-hindi-dubbed.MP3?row=0",
+          status: "Pika Pika",
+
+        },
+
+        //19
+
+        {
+          name: "Ash",
+          pic: "https://dl.dropbox.com/s/a487z16cr1uc3wj/images_36.jpeg?row=0",
+          song: "https://dl.dropbox.com/s/zqzq3fkp8nd5ri2/Pokemon-song-in-hindi-dubbed.MP3?row=0",
+          status: "Pikachu main tumhein chunta hoon",
+
+        },
+
+        //20
+        {
+          name: "Simba",
+          pic: "https://dl.dropbox.com/s/b6z7ok1i1lsdvsp/images_49.jpeg?row=0",
+          song: "https://www.dropbox.com/s/fb8y9llo186jqck/Simba_The_King_Lion_-_INTRO_-.flv%28128k%29?dl=1",
+          status: "It Doesn't Matter, I'm Home",
+
+        }];
+      var profile = data[Math.floor(Math.random()*(data.length+1))];
+      var pName = $("Pname");
+      var pImg = $("Pimg");
+      var pSummary = $("Psummary");
+      var pCall= $("call");
+      pName.innerHTML = profile.name;
+      pImg.style.backgroundImage = "url("+profile.pic+")";
+      pSummary.innerHTML = profile.status;
+      pCall.onclick= function(){
+          play(profile.song)
+      }
+   sound = new Howl({
+  src: [profile.song],
+  autoplay:false,
+  loop: true,
+  volume: 2,
+  });
+    }
+    function play(url){
+  sound.play()
+    }
+    Charactor();
+  </script>
+  <div class="mainsl" id="loader"> 
+      <div class="ldr"> 
+      <div class="lin o"></div> 
+      <div class="lin tw"></div> 
+      <div class="lin thr"></div> 
+      </div>   
+      <script>
+          setTimeout(function(){
+                $("loader").style.display="none";
+          },3000)
+      </script>
+</body>
+</html>
